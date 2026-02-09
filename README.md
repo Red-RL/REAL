@@ -1,6 +1,6 @@
 # Rewards as Labels: Revisiting RLVR from a Classification Perspective
 
-<div align="center">
+<div align="left">
 
 [![arXiv](https://img.shields.io/badge/arXiv-2602.05630-b31b1b.svg)](https://arxiv.org/abs/2602.05630)
 [![License](https://img.shields.io/badge/LICENSE-MIT-green.svg)](https://opensource.org/licenses/MIT) 
