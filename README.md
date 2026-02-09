@@ -41,15 +41,14 @@
 <em>Figure: Training dynamics comparison - REAL maintains stable entropy and achieves consistent improvement</em>
 </p>
 
----
 
 ## 🔍 Method
 
 REAL reformulates policy optimization by treating verifiable rewards ($r \in \{0,1\}$) as categorical labels, enabling a natural classification objective:
 
-$$
-\mathcal{L}_{\text{REAL}} = \log \left( 1 + \sum_{\mathcal{O}_+} e^{-\bar{s}^i/\tau} \right) + \log \left( 1 + \sum_{\mathcal{O}_-} e^{\bar{s}^j/\tau} \right)
-$$
+<p align="center">
+  <img src="./assets/real_loss.png" width="350">
+</p>
 
 where $\bar{s}$ is the length-normalized relative log-probability and $\tau$ is the temperature parameter.
 
@@ -57,13 +56,9 @@ where $\bar{s}$ is the length-normalized relative log-probability and $\tau$ is 
 
 REAL induces **monotonic and bounded** gradient weighting with magnitude upper-bounded by $\frac{1}{\tau}$:
 
-$$
-|\mathcal{W}_{\text{REAL}}| = 
-\begin{cases}
-\frac{1}{\tau}\frac{1}{1 + C_+ e^{\bar{s}^k / \tau}}, & r = 1 \\
-\frac{1}{\tau}\frac{1}{1 + C_- e^{-\bar{s}^k / \tau}}, & r = 0
-\end{cases}
-$$
+<p align="center">
+  <img src="./assets/magnitude.png" width="250">
+</p>
 
 This effectively mitigates gradient issues in GRPO while ensuring stable optimization.
 
@@ -72,8 +67,6 @@ This effectively mitigates gradient issues in GRPO while ensuring stable optimiz
   <br>
   <em>Figure: Gradient magnitude comparison - REAL provides monotonic and bounded gradients</em>
 </p>
-
----
 
 ## 🔧 Installation
 
