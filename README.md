@@ -60,7 +60,7 @@ REAL induces **monotonic and bounded** gradient weighting with magnitude upper-b
 $$
 |\mathcal{W}_{\text{REAL}}| = 
 \begin{cases}
-\frac{1}{\tau}\frac{1}{1 + C_+ e^{\bar{s}^k / \tau}}, & r = 1 \\[8pt]
+\frac{1}{\tau}\frac{1}{1 + C_+ e^{\bar{s}^k / \tau}}, & r = 1 \\
 \frac{1}{\tau}\frac{1}{1 + C_- e^{-\bar{s}^k / \tau}}, & r = 0
 \end{cases}
 $$
